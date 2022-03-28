@@ -10,3 +10,8 @@ def get_current_event():
         RUNNING)
 
     return database.select(sql)
+
+
+def get_current_event_id():
+    event = get_current_event()
+    return event[0][0] if len(event) > 0 else 0
