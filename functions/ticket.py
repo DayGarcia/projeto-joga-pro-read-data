@@ -28,12 +28,12 @@ def is_valid(event, code, user_id):
 
     ticket = get_ticket(event, code, user_id)
     status = ticket[0][1] if len(ticket) > 0 else 0
-
+    print('status', status)
     valid = False
 
     if(len(ticket) == 0):
         action = action_constants.INVALID
-    elif (status == 1):
+    elif (status == 0):
         action = action_constants.VALID
         valid = True
     else:
